@@ -20,7 +20,29 @@ This is a collection of library routines and other support functionality shared
 by many or all of the applications and other programs comprising Kumquat.
 Additionally, this repository also hosts `kumquat-about`, a simple About dialog
 program revealing Kumquat's version information and other information regarding
-Kumquat.
+Kumquat; and `kumquat-colors`, a simple color chooser application similar to
+`mate-color-select` from the MATE Desktop project.
+
+---
+
+## BUILD INSTRUCTIONS
+
+Kumquat currently requires:
+
+ - Qt 6 -- specifically the following modules:
+  * Core
+  * Gui
+  * Widgets
+
+Kumquat uses Meson as the build system.  In a nutshell:
+
+```
+$ mkdir .build
+$ cd .build
+$ meson setup ..
+$ ninja
+$ sudo ninja install
+```
 
 ---
 
@@ -28,11 +50,15 @@ Kumquat.
 
 Kumquat and all of its components are licensed under the MIT License, unless
 explicitly noted otherwise.  However, Kumquat relies on other libraries, most
-notably Qt, which can be used under the terms of the LGPL.  Only binary
-distributions of Kumquat are affected, though, and even then only if they are
-statically linked to Qt; dynamic linking to Qt is almost always the default,
-and is permissible, provided that an appropriate notice is included with any
-binary distributions.  Please see
+notably Qt, which is LGPL-licensed.  Only binary distributions of Kumquat are
+affected, though, and even then only if they are statically linked to Qt;
+dynamic linking to Qt is almost always the default, and is permissible,
+provided that an appropriate notice is included with any binary distributions.
+Furthermore, most GNU/Linux distributors should be completely unaffected by
+this licensing issue, since they distribute Qt as one or more entirely
+separate packages upon which Kumquat depends.
+
+Please see
 [Qt's open source licensing terms](https://www.qt.io/development/open-source-lgpl-obligations)
 for details regarding Qt's licensing.  The LGPL version 3 (and its dependent
 license, the GPL version 3) are available in the file `LICENSE.LGPL`.  The LGPL
